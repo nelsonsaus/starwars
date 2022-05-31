@@ -4,8 +4,10 @@
 ___
 
 Aqui se encuentra el proyecto de starwars de **Nelson Sanchez Usero**.  
-AUN NO ESTA TERMINADO !!!! EL LOGIN NO SE PUEDE USAR AUN, LO ESTOY HACIENDO SI QUIERES MOVERTE POR LAS PAGINAS
-HAZLO USANDO localhost/starwars(el login) localhost/starwars/naves localhost/starwars/peliculas localhost/starwars/inicio.
+AUN NO ESTA TERMINADO !!!! EL LOGIN NO SE PUEDE USAR AUN, LO ESTOY HACIENDO SI QUIERES MOVERTE POR LAS PAGINAS y no sabes como hazlo con
+localhost/starwars(el login) localhost/starwars/naves localhost/starwars/peliculas localhost/starwars/inicio.
+
+Aun asi en las paginas inicio, peliculas y naves, tienes una barra de navegacion para moverte por ellas.
 
 
 ## IMPORTANTE
