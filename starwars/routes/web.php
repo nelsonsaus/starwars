@@ -46,12 +46,12 @@ Route::get('/peliculas', function () {
 Route::get('/naves', 'App\Http\Controllers\NaveController@index')
     ->name('naves.index');
 
-Route::delete('pilotado/{alumno}{asignatura}', 'App\Http\Controllers\NaveController@borrarPilotado')
-    ->name('pilotado.borrar');
+// Route::delete('pilotado/{x}{y}', 'App\Http\Controllers\NaveController@borrarPilotado')
+//     ->name('pilotado.borrar');
 
-Route::post('pilotado', 'App\Http\Controllers\NaveController@storePilotado')
-    ->name('pilotado.store');
+// Route::post('pilotado', 'App\Http\Controllers\NaveController@storePilotado')
+//     ->name('pilotado.store');
 
 
-Route::post('usuarios', 'App\Http\Controllers\UsuarioController@store')
+Route::post('/usuarios', 'App\Http\Controllers\UsuarioController@store')
     ->name('usuarios.store');

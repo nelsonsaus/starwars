@@ -256,3 +256,13 @@ p{
     color:white;
   }
 
+
+
+  @media only screen and (max-width: 711px){
+    
+  }
+
+
+  @media only screen and (max-height: 779px){
+
+  }

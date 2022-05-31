@@ -49,7 +49,7 @@
                 <p style="font-weight:bold; margin-top:18%; font-size:60px;">STAR WARS</p>
                 <p style="font-style:italic; font-size:20px; opacity:0.7;">Aplicacion sobre Star Wars Naves y Pilotos</p>
 
-
+            
                 <button id="btnLogin" onclick="loguear()" type="button" style="width:200px; border:2px solid white; text-decoration:none; color:white; font-size:20px; padding:10px; display:block; margin:auto; margin-top:70px; text-align:center;">INICIAR SESION</button>
                 <button id="btnRegister" onclick="registrar()" type="button" style="width:160px; border:2px solid white; text-decoration:none; color:white; font-size:20px; padding:10px; display:block; margin:auto; margin-top:20px; text-align:center; background-color:#CB2940">Registrarte</button>
 
@@ -81,16 +81,16 @@
                 <div class="form-group row" style="height:22%;">
                     <label class="col-sm-3 control-label" style="margin-top:20px; margin-bottom:0; padding-bottom:0;" for="pass">Password</label>
                         <div class="col-sm-8" style="margin:0 auto;">
-                            <input type="pass" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" name="pass" class="form-control" placeholder="Escribe su contraseña">
+                            <input type="password" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" name="pass" class="form-control" placeholder="Escribe su contraseña">
                         </div>
                 </div>
 
                 <div class="row text-center mt-5">
-                    <div class="col-md-12 pb-3">
-                        <button class="btn" type="button" style="width:50%; height:100%; border:3px solid #CB2940;">INICIAR SESION</button>
+                    <div class="col-md-6">
+                        <button class="btn" type="button" style="width:80%; height:100%; border:3px solid #CB2940;">INICIAR SESION</button>
                     </diV>
-                    <div class="col-md-12">
-                        <button class="btn" type="button" onclick="registrar2()" style="color:white; width: 50%; height:100%; background-color: #CB2940;">REGISTRARSE</button>
+                    <div class="col-md-6">
+                        <button class="btn" type="button" onclick="registrar2()" style="color:white; width: 80%; height:100%; background-color: #CB2940;">REGISTRARSE</button>
                     </diV>
                 </div>
 
@@ -110,7 +110,7 @@
 
 
         <form name="b" action="{{route('usuarios.store')}}" method="POST" enctype="multipart/form-data">
-            <div id="cardRegister" style="height:50%; display:none;">
+            <div id="cardRegister" style="height:60%; display:none;">
 
                 <div style="margin:0 auto; margin-top:8%; background-color:white; width:90%; height:100%; border-radius:20px; padding-top:10px;">
 
@@ -124,15 +124,15 @@
                         <div class="form-group row" style="height:22%;">
                             <label class="col-sm-3 control-label" style="margin-top:20px" for="pass">Password</label>
                                 <div class="col-sm-8" style="margin:0 auto;">
-                                    <input type="pass" name="pass" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
+                                    <input type="password" name="pass" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
                                 </div>
                         </div>
 
                         <div class="row text-center mt-5">
-                            <div class="col-md-12 pb-3">
+                            <div class="col-md-6">
                                 <button class="btn" type="button" onclick="loguear2()" style="width:50%; height:100%; border:3px solid #CB2940;">INICIAR SESION</button>
                             </diV>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <button class="btn" type="submit" style="color:white; width: 50%; height:100%; background-color: #CB2940;">REGISTRARSE</button>
                             </diV>
                         </div>
@@ -140,13 +140,10 @@
                     </div>
 
 
-                    <div id="divImagen" class="rounded-circle" style="background-color:white; padding:0; position:absolute; top:2%; left:0%; right:0%; margin:auto; width:17%; height:17%;">
 
-                            <img src="storage/img/naves/otro3.png" style="margin:0 auto; border-radius:100px; object-fit:fill; width:75%; height:100%;"/>
-
-                    </div>
 
             </div>
+            
         </form>
 
 
@@ -246,7 +243,6 @@
             cardLogin.style="height:50%;";
 
             cardLogin.classList.add("animacionLogin");
-
 
             cardLogin.style="height:65%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
 
