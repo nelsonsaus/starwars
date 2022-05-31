@@ -14,7 +14,7 @@ Para poder usar bien el angular sin que de problemas con el navegador hay que ha
 
 * En google chrome te vas a chrome://flags:
 
-![Imagen chrome://flags](Images/example.png)
+![Imagen chrome://flags](images/flag.png)
 
 
 ### Construido con
