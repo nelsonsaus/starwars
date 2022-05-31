@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 
+
 class UsuarioController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -27,6 +30,8 @@ class UsuarioController extends Controller
         //
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -36,16 +41,19 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
 
+
+
         
         $request->validate([
             'nombre' => ['required'],
-            'correo' => ['required', 'unique:usuarios,email'],
+            'correo' => ['required', 'unique:usuarios,correo'],
             'pass' => ['required'],
         ]);
 
+
         $user = new Usuario();
         $user->nombre=ucwords($request->nombre);
-        $user->correo=ucwords($request->correo);
+        $user->correo=($request->correo);
         $user->pass=$request->pass;
 
         //PERFIL POR DEFECTO USUARIO NORMAL:
@@ -54,7 +62,7 @@ class UsuarioController extends Controller
 
 
         $user->save();
-        return redirect()->route('index3')->with('mensaje', 'Usuario creado Correctamente!');
+        return redirect()->route('login')->with('mensaje', 'Usuario creado Correctamente!');
 
     }
 
@@ -101,5 +109,33 @@ class UsuarioController extends Controller
     public function destroy(Usuario $usuario)
     {
         //
+    }
+
+
+
+
+
+    //*************************************************************
+    //OTROS METODOS:
+    //*************************************************************
+
+
+
+    public function login(Request $request){
+
+        //COMPROBAMOS SI EXISTE O NO EXISTE:
+
+        $use = Usuario::all()->where('correo', $request->correo);
+        if(count($use)>0){
+            return view('inicio');
+            
+        }else{
+
+            return redirect()->route('login')->with('error', 'ERROR: El usuario no existe...');
+
+        }
+
+
+        
     }
 }

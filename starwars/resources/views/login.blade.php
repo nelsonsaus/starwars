@@ -18,9 +18,12 @@
 
         @if($text=Session::get('mensaje'))
             <div style="background-color: #549e68; color:white; text-align:center; width:300px; height:80px; position:absolute; z-index:999999; bottom:0%; left:7%;">
-                <p style="color:white; padding-top:7%; font-weight:bold;">USUARIO CREADO CORRECTAMENTE.</p>
+                <p style="color:white; padding-top:7%; font-weight:bold;">{{ $text }}</p>
             </div>
-            
+        @elseif($text=Session::get('error'))
+            <div style="background-color: #a84545; color:white; text-align:center; width:300px; height:80px; position:absolute; z-index:999999; bottom:0%; left:7%;">
+                <p style="color:white; padding-top:7%; font-weight:bold;">{{ $text }}</p>
+            </div>
         @endif
 
     <div id="contenedor">
@@ -59,86 +62,88 @@
 
 
 
+        <form name="form1" action="{{route('usuarios.login')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div id="cardLogin" style="height:40%; display:none;">
 
-        <div id="cardLogin" style="height:60%; display:none;">
+                <div style="margin:0 auto; margin-top:8%; background-color:white; width:90%; height:100%; border-radius:20px; padding-top:10px;">
 
-            <div style="margin:0 auto; margin-top:8%; background-color:white; width:90%; height:100%; border-radius:20px; padding-top:50px;">
+                    <div class="form-group row" style="height:22%;">
+                        <label class="col-sm-3 control-label" style="margin-top:20px;" for="email">Email</label>
+                            <div class="col-sm-8" style="margin:0 auto;">
+                                <input type="text" name="correo" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="iemail" class="form-control" placeholder="Ej. ejemplo@gmail.com">
+                            </div>
+                    </div>
 
-            <div class="form-group row" style="height:22%;">
-                    <label class="col-sm-3 control-label" style="margin-top:20px" for="nombre">Nombre</label>
-                        <div class="col-sm-8" style="margin:0 auto;">
-                            <input type="text" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="inombre" name="nombre" class="form-control" placeholder="Escribe su Nombre">
+                    <div class="form-group row" style="height:22%;">
+                        <label class="col-sm-3 control-label" style="margin-top:20px" for="pass">Password</label>
+                            <div class="col-sm-8" style="margin:0 auto;">
+                                <input type="password" name="pass" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
+                            </div>
+                    </div>
+
+
+                    <div class="row text-center mt-5">
+                        <div class="col-md-6">
+                            <button class="btn" type="submit" style="width:80%; height:100%; border:3px solid #CB2940;">INICIAR SESION</button>
                         </div>
+                        <div class="col-md-6">
+                            <button class="btn" type="button" onclick="registrar2()" style="color:white; width: 80%; height:100%; background-color: #CB2940;">REGISTRARSE</button>
+                        </diV>
+                    </div>
+
+
                 </div>
-
-                <div class="form-group row" style="height:22%;">
-                    <label class="col-sm-3 control-label" style="margin-top:20px;" for="email">Email</label>
-                        <div class="col-sm-8" style="margin:0 auto;">
-                            <input type="text" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="iemail" name="email" class="form-control" placeholder="Ej. ejemplo@gmail.com">
-                        </div>
-                </div>
-
-                <div class="form-group row" style="height:22%;">
-                    <label class="col-sm-3 control-label" style="margin-top:20px; margin-bottom:0; padding-bottom:0;" for="pass">Password</label>
-                        <div class="col-sm-8" style="margin:0 auto;">
-                            <input type="password" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" name="pass" class="form-control" placeholder="Escribe su contraseña">
-                        </div>
-                </div>
-
-                <div class="row text-center mt-5">
-                    <div class="col-md-6">
-                        <button class="btn" type="button" style="width:80%; height:100%; border:3px solid #CB2940;">INICIAR SESION</button>
-                    </diV>
-                    <div class="col-md-6">
-                        <button class="btn" type="button" onclick="registrar2()" style="color:white; width: 80%; height:100%; background-color: #CB2940;">REGISTRARSE</button>
-                    </diV>
-                </div>
-
-            </div>
-
-
-            <div id="divImagen" class="rounded-circle" style="background-color:white; padding:0; position:absolute; top:0%; left:0%; right:0%; margin:auto; width:17%; height:17%;">
-        
-                    <img src="storage/img/naves/otro3.png" style="margin:0 auto; border-radius:100px; object-fit:fill; width:90%; height:90%;"/>
-
-            </div>
-            
-
+        </form>
 
 
         </div>
 
 
-        <form name="b" action="{{route('usuarios.store')}}" method="POST" enctype="multipart/form-data">
+        <form name="form2" action="{{route('usuarios.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div id="cardRegister" style="height:60%; display:none;">
 
-                <div style="margin:0 auto; margin-top:8%; background-color:white; width:90%; height:100%; border-radius:20px; padding-top:10px;">
+            <div style="margin:0 auto; margin-top:8%; background-color:white; width:90%; height:100%; border-radius:20px; padding-top:50px;">
 
-                        <div class="form-group row" style="height:22%;">
-                            <label class="col-sm-3 control-label" style="margin-top:20px;" for="email">Email</label>
-                                <div class="col-sm-8" style="margin:0 auto;">
-                                    <input type="text" name="correo" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="iemail" class="form-control" placeholder="Ej. ejemplo@gmail.com">
-                                </div>
-                        </div>
-
-                        <div class="form-group row" style="height:22%;">
-                            <label class="col-sm-3 control-label" style="margin-top:20px" for="pass">Password</label>
-                                <div class="col-sm-8" style="margin:0 auto;">
-                                    <input type="password" name="pass" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
-                                </div>
-                        </div>
-
-                        <div class="row text-center mt-5">
-                            <div class="col-md-6">
-                                <button class="btn" type="button" onclick="loguear2()" style="width:50%; height:100%; border:3px solid #CB2940;">INICIAR SESION</button>
-                            </diV>
-                            <div class="col-md-6">
-                                <button class="btn" type="submit" style="color:white; width: 50%; height:100%; background-color: #CB2940;">REGISTRARSE</button>
-                            </diV>
-                        </div>
-
+                <div class="form-group row" style="height:22%;">
+                        <label class="col-sm-3 control-label" style="margin-top:20px" for="nombre">Nombre</label>
+                            <div class="col-sm-8" style="margin:0 auto;">
+                                <input type="text" name="nombre" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="inombre" class="form-control" placeholder="Escribe su Nombre">
+                            </div>
                     </div>
 
+                    <div class="form-group row" style="height:22%;">
+                        <label class="col-sm-3 control-label" style="margin-top:20px;" for="email">Email</label>
+                            <div class="col-sm-8" style="margin:0 auto;">
+                                <input type="text" name="correo" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="iemail" class="form-control" placeholder="Ej. ejemplo@gmail.com">
+                            </div>
+                    </div>
+
+                    <div class="form-group row" style="height:22%;">
+                        <label class="col-sm-3 control-label" style="margin-top:20px; margin-bottom:0; padding-bottom:0;" for="pass">Password</label>
+                            <div class="col-sm-8" style="margin:0 auto;">
+                                <input type="password" name="pass" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
+                            </div>
+                    </div>
+
+                    <div class="row text-center mt-5">
+                        <div class="col-md-6">
+                            <button class="btn" type="button" onclick="loguear2()" style="width:50%; height:100%; border:3px solid #CB2940;">INICIAR SESION</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn" type="submit" style="color:white; width: 50%; height:100%; background-color: #CB2940;">REGISTRARSE</button>
+                        </diV>
+                    </div>
+
+                </div>
+
+
+                <div id="divImagen" class="rounded-circle" style="background-color:white; padding:0; position:absolute; top:0%; left:0%; right:0%; margin:auto; width:17%; height:17%;">
+
+                        <img src="storage/img/naves/otro3.png" style="margin:0 auto; border-radius:100px; object-fit:fill; width:90%; height:90%;"/>
+
+                </div>
 
 
 
@@ -244,7 +249,8 @@
 
             cardLogin.classList.add("animacionLogin");
 
-            cardLogin.style="height:65%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
+
+            cardLogin.style="height:40%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
 
         }, 1500);
 
@@ -277,7 +283,7 @@
             cardRegister.classList.add("animacionRegister");
 
 
-            cardRegister.style="height:40%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
+            cardRegister.style="height:65%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
 
         }, 1500);
 
@@ -299,7 +305,7 @@
             cardRegister.classList.add("animacionRegister");
 
 
-            cardRegister.style="height:40%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
+            cardRegister.style="height:65%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
 
         }, 1500);
 
@@ -322,7 +328,7 @@
             cardLogin.classList.add("animacionLogin");
 
 
-            cardLogin.style="height:65%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
+            cardLogin.style="height:40%; width:45%; position: absolute; top:20%; left:0%; right:0%; margin:auto;";
 
         }, 1500);
 

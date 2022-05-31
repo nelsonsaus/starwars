@@ -1,6 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 //      return view('welcome');
 //  });
 
-// Route::resource('/', 'App\Http\Controllers\NaveController');
+
 
 
 
@@ -29,6 +32,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 })->name('login');
+
+Route::resource('usuarios', UsuarioController::class);
 
 
 Route::get('/inicio', function () {
@@ -43,6 +48,8 @@ Route::get('/peliculas', function () {
 
 
 
+
+
 Route::get('/naves', 'App\Http\Controllers\NaveController@index')
     ->name('naves.index');
 
@@ -53,5 +60,9 @@ Route::get('/naves', 'App\Http\Controllers\NaveController@index')
 //     ->name('pilotado.store');
 
 
-Route::post('/usuarios', 'App\Http\Controllers\UsuarioController@store')
-    ->name('usuarios.store');
+// Route::post('', 'App\Http\Controllers\UsuarioController@store')
+//     ->name('usuarios.store');
+
+
+Route::post('login', 'App\Http\Controllers\UsuarioController@login')
+    ->name('usuarios.login');
