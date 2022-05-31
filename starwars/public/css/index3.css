@@ -1,0 +1,258 @@
+html{
+    height:100%;
+    overflow: hidden;
+}
+
+body{
+    height:100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+#contenedor{
+
+    height:100%;
+    width:100%;
+    /* background-color: #141414; */
+    /* background-color: #191A1F; */
+    /* background-image: radial-gradient(circle at center, #303030, #292929, #141414); */
+    background: -moz-radial-gradient(center, ellipse cover, rgb(75, 75, 75) 0%,rgb(59, 59, 59) 0%,rgba(20, 20, 20, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgb(75, 75, 75)), color-stop(0%,rgb(59, 59, 59)), color-stop(100%,rgba(20, 20, 20, 1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, rgb(75, 75, 75) 0%,rgb(59, 59, 59) 0%,rgba(20, 20, 20, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, rgb(75, 75, 75) 0%,rgb(59, 59, 59) 0%,rgba(20, 20, 20, 1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgb(75, 75, 75) 0%,rgb(59, 59, 59) 0%,rgba(20, 20, 20, 1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, rgb(75, 75, 75) 0%,rgb(59, 59, 59) 0%,rgba(20, 20, 20, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#111111',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+p{
+    text-align: center;
+    color:white;
+}
+
+
+
+.animacionLogin{
+  
+    animation-duration:1.5s;
+    animation-name: login;
+  
+  }
+  
+  @keyframes login {
+    from{
+        width:45%;
+        height:65%;
+        position: absolute;
+        top:20%;
+        left:-30%;
+        right:130%;
+        margin:auto;
+    }
+  
+    to{
+        width:45%;
+        height:65%;
+        position: absolute;
+        top:20%;
+        left:0%;
+        right:0%;
+        margin:auto;
+        
+    }
+  }
+
+
+
+  .animacionLoginVuelta{
+  
+    animation-duration:1.5s;
+    animation-name: loginBack;
+  
+  }
+  
+  @keyframes loginBack {
+    from{
+
+        width:45%;
+        height:65%;
+        position: absolute;
+        top:20%;
+        left:0%;
+        right:0%;
+        margin:auto;
+
+    }
+  
+    to{
+        width:45%;
+        height:65%;
+        position: absolute;
+        top:20%;
+        left:-60%;
+        right:160%;
+        margin:auto;
+        
+    }
+
+
+
+
+  }
+  
+
+
+  .animacionRegister{
+  
+    animation-duration:1.5s;
+    animation-name: register;
+  
+  }
+  
+  @keyframes register {
+    from{
+        width:45%;
+        height:40%;
+        position: absolute;
+        top:20%;
+        right:-30%;
+        left:130%;
+        margin:auto;
+    }
+  
+    to{
+        width:45%;
+        height:40%;
+        position: absolute;
+        top:20%;
+        right:0%;
+        left:0%;
+        margin:auto;
+        
+    }
+  }
+
+
+
+  .animacionRegisterVuelta{
+  
+    animation-duration:1.5s;
+    animation-name: registerBack;
+  
+  }
+  
+  @keyframes registerBack {
+    from{
+
+        width:45%;
+        height:40%;
+        position: absolute;
+        top:20%;
+        right:0%;
+        left:0%;
+        margin:auto;
+
+    }
+  
+    to{
+        width:45%;
+        height:40%;
+        position: absolute;
+        top:20%;
+        right:-30%;
+        left:130%;
+        margin:auto;
+        
+    }
+  }
+
+
+
+
+  .animacionCentro{
+  
+    animation-duration:1.5s;
+    animation-name: desaparecer;
+  
+  }
+  
+  @keyframes desaparecer {
+    from{
+        padding:0; 
+        margin:0; 
+        width:50%; 
+        height:50%; 
+        position:absolute; 
+        top:0%; 
+        left:0%; 
+        right:0%; 
+        bottom:0%; 
+        margin:auto;
+    }
+  
+    to{
+        padding:0; 
+        margin:0; 
+        width:50%; 
+        height:50%; 
+        position:absolute; 
+        top:130%;
+        left:0%; 
+        right:0%; 
+        bottom:-30%; 
+        margin:auto;
+        
+    }
+  }
+
+
+
+  .animacionCentroImg{
+  
+    animation-duration:1.5s;
+    animation-name: desaparecer;
+  
+  }
+  
+  @keyframes desaparecer {
+    from{
+        width:35%; 
+        height:100%; 
+        position:absolute; 
+        top:0%; 
+        left:0%; 
+        right:0%; 
+        bottom:0%; 
+        margin:auto; 
+        opacity:0.7;
+    }
+  
+    to{
+        width:35%; 
+        height:100%; 
+        position:absolute; 
+        top:130%;
+        left:0%; 
+        right:0%; 
+        bottom:-30%; 
+        margin:auto;
+        opacity:0.7;
+        
+    }
+  }
+
+
+
+  label{
+    font-weight: bold;
+    font-size:20px;
+    margin-left:18%;
+  }
+
+
+  input::placeholder{
+    color:white;
+  }
+
