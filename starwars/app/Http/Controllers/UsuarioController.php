@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class UsuarioController extends Controller
 {
 
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +34,7 @@ class UsuarioController extends Controller
         //
     }
 
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -47,7 +47,7 @@ class UsuarioController extends Controller
 
 
 
-        
+
         $request->validate([
             'nombre' => ['required'],
             'correo' => ['required', 'unique:users,correo'],
@@ -137,12 +137,14 @@ class UsuarioController extends Controller
             // die();
             if(Auth::attempt($credenciales)){
                 return view('inicio');
-                
+
             }
             // return view('inicio');
+
             return redirect()->route('login')->with('error', 'ERROR: El usuario no existe...');
         }else{
 
+            return redirect()->route('login')->with('error', 'ERROR: El usuario no existe...');
 
         }
 

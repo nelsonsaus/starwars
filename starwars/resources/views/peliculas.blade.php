@@ -26,7 +26,7 @@
 
 
                 <button class="dropdown-toggle" style="color:white; padding-left:20px; padding-top:20px; outline:none" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span style="font-weight:bold">{{ auth()->user()->nombre }} 
+                    <span style="font-weight:bold">{{ auth()->user()->nombre }}
                         @if(auth()->user()->perfil==1)
                             <span style="color:#CB2940">[ ADMINISTRADOR ]</span>
                         @else
@@ -36,7 +36,7 @@
                     </span>
                 </button>
 
-                
+
 
                 <div class="dropdown-menu" style="background-color:#28242D; padding-top:0; padding-bottom:0;" aria-labelledby="dropdownMenu2">
                     <a href="{{route('usuarios.usuarios')}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
@@ -59,8 +59,8 @@
 
             <div class="carousel-inner" style="width:100%; height:100%;">
                 <div id="panel1" class="carousel-item active">
-                    <img class="imagenes" src='storage/img/naves/dos.jpg'/>
-                    <div class="div1" style="width:85%; height:76%; border:8px solid black; border-radius:7px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; background-image: url('storage/img/naves/dos.jpg'); background-size:cover;">
+                    <img class="imagenes" src='img/naves/dos.jpg'/>
+                    <div class="div1" style="width:85%; height:76%; border:8px solid black; border-radius:7px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; background-image: url('img/naves/dos.jpg'); background-size:cover;">
                         <div class="div2">
                             <div class="div3"></div>
                         </div>
@@ -108,8 +108,8 @@
 
 
                 <div class="carousel-item" style="width:100%; height:100%;">
-                    <img class="imagenes" src='storage/img/naves/uno.jpg' />
-                    <div class="div1" style="width:85%; height:76%; border:8px solid black; border-radius:7px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; background-image: url('storage/img/naves/uno.jpg'); background-size:cover;">
+                    <img class="imagenes" src='img/naves/uno.jpg' />
+                    <div class="div1" style="width:85%; height:76%; border:8px solid black; border-radius:7px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; background-image: url('img/naves/uno.jpg'); background-size:cover;">
                         <div class="div2">
                             <div class="div3"></div>
                         </div>
@@ -157,8 +157,8 @@
 
 
                 <div class="carousel-item" style="width:100%; height:100%;">
-                    <img class="imagenes" src='storage/img/naves/tres.jpg' />
-                    <div class="div1" style="width:85%; height:76%; border:8px solid black; border-radius:7px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; background-image: url('storage/img/naves/tres.jpg'); background-size:cover;">
+                    <img class="imagenes" src='img/naves/tres.jpg' />
+                    <div class="div1" style="width:85%; height:76%; border:8px solid black; border-radius:7px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; background-image: url('img/naves/tres.jpg'); background-size:cover;">
                         <div class="div2">
                             <div class="div3"></div>
                         </div>

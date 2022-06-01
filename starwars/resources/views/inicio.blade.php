@@ -60,7 +60,7 @@
 
 
             <button class="dropdown-toggle" style="padding-left:20px; padding-top:20px; outline:none" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span style="font-weight:bold">{{ auth()->user()->nombre }} 
+                <span style="font-weight:bold">{{ auth()->user()->nombre }}
                     @if(auth()->user()->perfil==1)
                         <span style="color:#CB2940">[ ADMINISTRADOR ]</span>
                     @else
@@ -100,8 +100,8 @@
 
 
             <!--box-shadow:-25px -10px 25px black; puedes añadirselo o no-->
-            <div id="divImagen"></div>
-            
+            <div id="divImagen" style="background-image: url('{{asset('img/naves/d2.png')}}');"></div>
+
 
 
 
@@ -114,8 +114,8 @@
 
                 <div id="bloqueContenido">
 
-                
-                            
+
+
                     <p style="position:absolute; font-size:30px; font-weight:lighter; margin-left:30px;">HERE AND NOW</p>
                     <p style="position:absolute; font-size:70px; font-weight:bold; margin-left:30px; margin-top:30px;">STAR WARS</p>
                     <p style="position:absolute; font-size:15px; margin-left:30px; margin-top:200px; width:75%;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -131,10 +131,10 @@
                     <p style="position:absolute; margin-top:50px; width:380px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
 
                     <div style="width:400px; height:150px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.2); border-radius: 16px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); opacity:0.4; position:relative;">
-                    
+
                         <div style="margin-left:30px; margin-top:30px; width:60px; height:60px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.3); clip-path: polygon(0 50%, 100% 50%, 50% 100%); position:absolute; left:40%; bottom:-21%;"></div>
 
-                
+
                     </div>
                 </div>
 
@@ -145,10 +145,10 @@
                     <p style="position:absolute; margin-top:50px; width:380px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
 
                     <div style="width:400px; height:150px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.2); border-radius: 16px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); opacity:0.4; position:relative;">
-                    
+
                         <div style="margin-left:30px; margin-top:30px; width:60px; height:60px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.3); clip-path: polygon(0 50%, 100% 50%, 50% 100%); position:absolute; left:40%; bottom:-21%;"></div>
 
-                
+
                     </div>
                 </div>
             </div>
@@ -176,7 +176,7 @@
 
                 <a id="arriba" href="#primero" style="z-index:30; position:absolute; top:12%; left:7%; background-color: #CB2940; width:100px; height:100px; border-radius:50px; text-align:center; cursor:pointer; text-decoration:none; color:white; box-shadow:10px 5px 20px black"><i class="fas fa-arrow-up" style="font-size:5em;padding-top:20px;"></i></a>
 
-            
+
 
                 <div class="col-md-6" style="position:relative;">
 
@@ -199,13 +199,13 @@
 
                 <div class="col-md-6" style="position:relative;">
 
-                    <img src="storage/img/naves/nave.png" style="position:absolute; top:0; right:10%; bottom:0; margin:auto;"/>
+                    <img src="img/naves/nave.png" style="position:absolute; top:0; right:10%; bottom:0; margin:auto;"/>
 
                 </div>
 
             </div>
 
-            
+
         </div>
 
     </div>
@@ -225,7 +225,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous">        
+        crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
@@ -247,9 +247,9 @@
         var header = document.getElementsByTagName("header")[0];
 
         $('#abajo').on("click", function(){
-            
 
-            
+
+
             header.style="z-index:13; background-color:#37343B; height:80px; position:sticky; top:0; display:inline-block; width:100%;";
             console.log(header);
 
@@ -283,9 +283,9 @@
 
 
         $('#arriba').on("click", function(){
-            
 
-            
+
+
             header.style="z-index:3;height:80px; position:sticky; top:0; display:inline-block; width:100%;";
             console.log(header);
 

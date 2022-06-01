@@ -24,7 +24,7 @@
 
 
             <button class="dropdown-toggle" style="color:white; padding-left:20px; padding-top:20px; outline:none" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span style="font-weight:bold">{{ auth()->user()->nombre }} 
+                <span style="font-weight:bold">{{ auth()->user()->nombre }}
                     @if(auth()->user()->perfil==1)
                         <span style="color:#CB2940">[ ADMINISTRADOR ]</span>
                     @else
@@ -34,7 +34,7 @@
                 </span>
             </button>
 
-            
+
 
             <div class="dropdown-menu" style="background-color:#28242D; padding-top:0; padding-bottom:0;" aria-labelledby="dropdownMenu2">
                 <a href="{{route('usuarios.usuarios')}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
@@ -54,7 +54,7 @@
 
 
 
-    <img src="storage/img/naves/otro3.png" style="width:180px; height:200px; display:block; margin:auto; margin-top:20px;"/>
+    <img src="img/naves/otro3.png" style="width:180px; height:200px; display:block; margin:auto; margin-top:20px;"/>
 
     <div class="row" style="background-color:white; width:60%; height:30%; border-radius:30px; margin:0 auto; margin-top:70px;">
 
@@ -124,7 +124,7 @@
                             <td>
 
                                 @if(auth()->user()->perfil == 1)
-                                           
+
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#borrar-confirm" ><i class="fas fa-trash"></i></button>
                                     <a class="btn btn-success btn-xs"><i class="fas fa-pencil-alt"></i></a>
 
@@ -159,7 +159,7 @@
 
 
 
-    
+
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="view/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -167,7 +167,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous">        
+        crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
@@ -178,7 +178,7 @@
 <script>
         $('.dropdown-toggle').dropdown()
     </script>
-    
+
     <script>
          $(document).ready(function() {
           var table = $('#edit-usuarios').DataTable({
@@ -192,11 +192,11 @@
             "orderMulti": false,
             // "order": [[ 1, "asc" ], [ 3, "asc" ]],
             "order": [[1, "asc"]],
-            
-         
+
+
          });
 
-         
+
 
           $('#idfiltro-nombre').on('change', function () {
                table.columns(1).search( this.value ).draw();
@@ -204,19 +204,19 @@
           $('#idfiltro-perfil').on('change', function () {
                table.columns(2).search( this.value ).draw();
                 } );
-         
-        
-         
-         
-         
-         
+
+
+
+
+
+
          } );
 
 
-         
 
-         
-         
+
+
+
       </script>
 
 
