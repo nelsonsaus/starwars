@@ -10,14 +10,16 @@ AUN NO ESTA TERMINADO !!!!
 ## IMPORTANTE
 ___
 
-Hay un problema con angular y los navegadores con el tema de certificados, en el caso de google se resuelve así:
+
+* El comando para insertar naves es php artisan nave:insertar. INSERTALO ANTES DE IR A LA PAGINA DE LAS NAVES.
+
+* Hay un problema con angular y los navegadores con el tema de certificados, en el caso de google se resuelve así:
 Para poder usarlo en chrome hay que hacer lo siguiente:
 
-* En google chrome te vas a chrome://flags:
+En google chrome te vas a chrome://flags:
 
 ![Imagen chrome://flags](images/flag.png)
 
-* El comando para insertar naves es php artisan nave:insertar
 
 
 ### Construido con

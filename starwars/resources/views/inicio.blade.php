@@ -60,13 +60,13 @@
 
 
             <button class="dropdown-toggle" style="padding-left:20px; padding-top:20px; outline:none" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span style="font-weight:bold">Usuario <span style="color:gray">[USER]</span></span>
+                <span style="font-weight:bold">{{ auth()->user()->nombre }} <span style="color:gray">[USER]</span></span>
             </button>
 
             <div class="dropdown-menu" style="background-color:#28242D; padding-top:0; padding-bottom:0;" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px" type="button">Perfil</button>
-                <button class="dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px" type="button">Usuarios</button>
-                <button class="dropdown-item" style="border-top:1px solid white;color:white; padding-top:10px; padding-bottom:10px" type="button">Cerrar Sesion</button>
+                <a href="" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
+                <a href="" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Usuarios</a>
+                <a href="{{route('usuarios.logout')}}" class="btn dropdown-item" style="border-top:1px solid white;color:white; padding-top:10px; padding-bottom:10px">Cerrar Sesion</a>
             </div>
 
         </div>

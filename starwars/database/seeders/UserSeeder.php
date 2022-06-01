@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
-use App\Models\Usuario;
+use Illuminate\Support\Facades\Hash;
 
-class UsuarioSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,11 +15,11 @@ class UsuarioSeeder extends Seeder
      */
     public function run()
     {
-        Usuario::create([
+        User::create([
             'nombre'=>'Admin',
             'correo'=>'eladmin@gmail.com',
             'imagen'=>null,
-            'pass'=>'prueba',
+            'password'=>Hash::make('prueba'),
             'perfil'=>1
             ]
         );

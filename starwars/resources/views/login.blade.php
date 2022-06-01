@@ -78,7 +78,7 @@
                     <div class="form-group row" style="height:22%;">
                         <label class="col-sm-3 control-label" style="margin-top:20px" for="pass">Password</label>
                             <div class="col-sm-8" style="margin:0 auto;">
-                                <input type="password" name="pass" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
+                                <input type="password" name="password" required style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
                             </div>
                     </div>
 
@@ -123,7 +123,7 @@
                     <div class="form-group row" style="height:22%;">
                         <label class="col-sm-3 control-label" style="margin-top:20px; margin-bottom:0; padding-bottom:0;" for="pass">Password</label>
                             <div class="col-sm-8" style="margin:0 auto;">
-                                <input type="password" name="pass" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
+                                <input type="password" name="password" style="color:white; height:100%;background-image: linear-gradient(to left, rgb(75, 75, 75), #141414);" id="ipass" class="form-control" placeholder="Escribe su contraseña">
                             </div>
                     </div>
 

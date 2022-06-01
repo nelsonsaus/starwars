@@ -42,7 +42,7 @@ class InsertarNaveCommand extends Command
     public function handle()
     {
 
-        Artisan::call('migrate:fresh');
+        Artisan::call('migrate:fresh --seed');
 
 
         // Schema::disableForeignKeyConstraints();

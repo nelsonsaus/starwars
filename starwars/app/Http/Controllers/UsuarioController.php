@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 
 class UsuarioController extends Controller
@@ -46,15 +48,15 @@ class UsuarioController extends Controller
         
         $request->validate([
             'nombre' => ['required'],
-            'correo' => ['required', 'unique:usuarios,correo'],
-            'pass' => ['required'],
+            'correo' => ['required', 'unique:users,correo'],
+            'password' => ['required'],
         ]);
 
 
-        $user = new Usuario();
+        $user = new User();
         $user->nombre=ucwords($request->nombre);
-        $user->correo=($request->correo);
-        $user->pass=$request->pass;
+        $user->correo=$request->correo;
+        $user->password=Hash::make($request->password);
 
         //PERFIL POR DEFECTO USUARIO NORMAL:
         $user->perfil = 0;
@@ -125,17 +127,32 @@ class UsuarioController extends Controller
 
         //COMPROBAMOS SI EXISTE O NO EXISTE:
 
-        $use = Usuario::all()->where('correo', $request->correo);
+        $use = User::all()->where('correo', $request->correo);
         if(count($use)>0){
-            return view('inicio');
-            
+
+            $credenciales = request()->only('correo', 'password');
+            // echo $credenciales["correo"];
+            // die();
+            if(Auth::attempt($credenciales)){
+                return view('inicio');
+                
+            }
+            // return view('inicio');
+            return redirect()->route('login')->with('error', 'ERROR: El usuario no existe...');
         }else{
 
-            return redirect()->route('login')->with('error', 'ERROR: El usuario no existe...');
 
         }
 
+    }
 
-        
+
+
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login');
     }
 }

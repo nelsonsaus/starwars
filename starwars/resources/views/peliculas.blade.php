@@ -26,7 +26,7 @@
 
 
                 <button class="dropdown-toggle" style="color:white; padding-left:20px; padding-top:20px; outline:none" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span style="font-weight:bold;">Usuario <span style="color:gray">[USER]</span></span>
+                    <span style="font-weight:bold;">{{ auth()->user()->nombre }} <span style="color:gray">[USER]</span></span>
                 </button>
 
                 
