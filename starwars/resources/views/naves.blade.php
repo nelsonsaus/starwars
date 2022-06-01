@@ -80,7 +80,7 @@
             <div style="position:relative;margin-bottom:100px">
 
 
-                <div id = "portada">
+                <div id = "portada" style="background-image: url('{{asset('img/naves/starwars2.jpg')}}');">
 
 
 
