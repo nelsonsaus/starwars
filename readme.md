@@ -10,9 +10,8 @@ AUN NO ESTA TERMINADO !!!!
 ## IMPORTANTE
 ___
 
-Usa google o opera(creo que tambien va bien) ya que firefox sale un problema con angular, pero no se a que se puede deber.
-En los demás navegadores sobre todo en chrome haciendo lo siguiente funciona:
-Para poder usar bien el angular sin que de problemas con el navegador hay que hacer lo siguiente:
+Hay un problema con angular y los navegadores con el tema de certificados, en el caso de google se resuelve así:
+Para poder usarlo en chrome hay que hacer lo siguiente:
 
 * En google chrome te vas a chrome://flags:
 
