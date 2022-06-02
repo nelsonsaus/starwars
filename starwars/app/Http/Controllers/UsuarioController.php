@@ -6,13 +6,14 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 
 class UsuarioController extends Controller
 {
 
 
- 
+
     public function index()
     {
 
@@ -73,7 +74,7 @@ class UsuarioController extends Controller
 
 
 
-            
+
 
 
         //El email pues obviamente tendra que ser unico.
@@ -95,14 +96,15 @@ class UsuarioController extends Controller
             $request->validate(['foto'=>['image']]);
 
             $fileImagen=$request->file('foto');
-            $nombre="img/naves/".uniqid()."_".$fileImagen->getClientOriginalName();
+            $nombre="img/usuarios/".uniqid()."_".$fileImagen->getClientOriginalName();
+
 
             if($usuario->imagen!=null){
                 unlink($usuario->imagen);
             }
 
             Storage::Disk("public")->put($nombre, \File::get($fileImagen));
-            $usuario->update(['imagen'=>"storage".$nombre]);
+            $usuario->update(['imagen'=>"storage/".$nombre]);
         }
 
 
@@ -128,7 +130,7 @@ class UsuarioController extends Controller
         }
 
 
-        
+
 
         $usuario->delete();
         return redirect()->route('usuarios.usuarios')->with('mensaje', "El usuario se ha borrado correctamente.");
@@ -179,6 +181,6 @@ class UsuarioController extends Controller
         return redirect()->route('login');
     }
 
-    
+
 
 }

@@ -242,3 +242,11 @@ p{
     background-color:#15131D;
 }
 
+
+
+
+@media only screen and (max-width: 786px){
+    #bloqueNave{
+        display:none;
+    }
+}

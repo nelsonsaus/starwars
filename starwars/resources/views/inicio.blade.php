@@ -188,8 +188,8 @@
 
                         <div style="height:50px; width:100%; margin-top:150px; padding-left:40px;">
                             <a href="https://www.instagram.com/starwars/?hl=es"><i class="fa fa-instagram" style="font-size:30px; color:#CA3A9C; font-weight:bold"></i></a>
-                            <a href="https://twitter.com/starwarsspain?lang=es"><i class="fa fa-twitter" style="font-size:30px; color:#1D9BF0; font-weight:bold"></i></a>
-                            <a href="https://es-es.facebook.com/StarWars/"><i class="fa fa-facebook" style="font-size:30px; color:#33579F; font-weight:bold"></i></a>
+                            <a href="https://twitter.com/starwarsspain?lang=es" style="padding-left:30px;"><i class="fa fa-twitter" style="font-size:30px; color:#1D9BF0; font-weight:bold"></i></a>
+                            <a href="https://es-es.facebook.com/StarWars/" style="padding-left:30px;"><i class="fa fa-facebook" style="font-size:30px; color:#33579F; font-weight:bold"></i></a>
 
                         </div>
 
@@ -197,7 +197,7 @@
 
                 </div>
 
-                <div class="col-md-6" style="position:relative;">
+                <div id="bloqueNave" class="col-md-6" style="position:relative;">
 
                     <img src="img/naves/nave.png" style="position:absolute; top:0; right:10%; bottom:0; margin:auto;"/>
 

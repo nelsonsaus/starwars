@@ -115,11 +115,11 @@ p{
 
 
 
-        
 
-       
 
-    
+
+
+
 
 
       </style>
@@ -134,7 +134,7 @@ p{
 
 
     <button class="dropdown-toggle" style="color:white; padding-left:20px; padding-top:20px; outline:none" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span style="font-weight:bold">{{ auth()->user()->nombre }} 
+        <span style="font-weight:bold">{{ auth()->user()->nombre }}
             @if(auth()->user()->perfil==1)
                 <span style="color:#CB2940">[ ADMINISTRADOR ]</span>
             @else
@@ -144,7 +144,7 @@ p{
         </span>
     </button>
 
-    
+
 
     <div class="dropdown-menu" style="background-color:#28242D; padding-top:0; padding-bottom:0;" aria-labelledby="dropdownMenu2">
         <a href="{{route('usuarios.edit', auth()->user()->id)}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
@@ -184,7 +184,11 @@ p{
                <div class="cosa2" style="width: 95%">
                    <div class="row">
                        <div id="divpeque" class="col-md-3 text-center" style="background-color: rgb(201, 201, 201); height:800px">
-                           <img id="img1" src="{{asset('img/naves/user.png')}}" alt="foto trabajador" class="mt-3 mb-5">
+                           @if($usuario->imagen!=null)
+                            <img id="img1" src="{{asset($usuario->imagen)}}" alt="foto trabajador" class="mt-3 mb-5">
+                           @else
+                            <img id="img1" src="{{asset('img/naves/user.png')}}" alt="foto trabajador" class="mt-3 mb-5">
+                           @endif
                            <hr>
                            <p><i class="far fa-envelope float-left ml-3 rounded-circle" style="background-color: black; font-size: 30px; color: #e6e4e3"></i><b>{{$usuario->correo}}</b></p>
                            <br>
@@ -199,7 +203,7 @@ p{
                <h5><i class="icon fas fa-check"></i> Activo</h5>
                 El usuario esta activo.
             </div>
-            
+
                        </div>
                    </div>
                </div>
@@ -217,7 +221,7 @@ p{
             <h3 class="card-title">
                <h5 style="color:white">DATOS PERSONALES</h5>
             </h3>
-         </div> 
+         </div>
 
          <div class="card-body" style="position:relative; height:100%; width:100%; background-color:#242424; text-align:right;color:white;">
             <form action="{{route('usuarios.update', $usuario)}}" method="POST" enctype="multipart/form-data">
@@ -234,7 +238,7 @@ p{
                @if(auth()->user()->perfil==1 && $usuario->correo!=auth()->user()->correo)
                 <div class="col-sm-5" style="font-size:30px;"><input type="text" name="perfil" value="{{$usuario->perfil}}" class="form-control" style="position:absolute;z-index:200"></div>
                @else
-                <div class="col-sm-5" style="font-size:30px;"><input type="text" name="perfil" value="{{$usuario->perfil}}" class="form-control" style="position:absolute;z-index:200"></div>
+                <div class="col-sm-5" style="font-size:30px;"><input type="text" name="perfil" value="{{$usuario->perfil}}" class="form-control" style="position:absolute;z-index:200" disabled></div>
                @endif
                <label class="col-sm-5" style="font-size:30px; margin-bottom:30px;">TELEFONO</label>
                @if($usuario->telefono!=null)
@@ -302,13 +306,13 @@ p{
                 divgrande.style="margin-top:800px;";
 
                 var x = window.matchMedia("(min-width: 1036px)")
-                myFunction2(x) 
+                myFunction2(x)
                 x.addListener(myFunction2)
-                
+
             }
         }
 
-        
+
         function myFunction2(x) {
             if (x.matches) {
 
@@ -334,15 +338,15 @@ p{
                 divgrande.style="";
 
 
-                
+
             }
         }
 
 
         var x = window.matchMedia("(max-width: 1035px)")
-        myFunction(x) 
+        myFunction(x)
         x.addListener(myFunction)
       </script>
-    
+
 </body>
 </html>

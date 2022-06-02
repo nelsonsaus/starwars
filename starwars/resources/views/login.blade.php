@@ -139,9 +139,9 @@
                 </div>
 
 
-                <div id="divImagen" class="rounded-circle" style="background-color:white; padding:0; position:absolute; top:0%; left:0%; right:0%; margin:auto; width:17%; height:17%;">
+                <div id="divImagen" class="rounded-circle" style="background-color:white; padding:0; position:absolute; top:0%; left:0%; right:0%; margin:auto; width:100px; height:100px">
 
-                        <img src="img/naves/otro3.png" style="margin:0 auto; border-radius:100px; object-fit:fill; width:90%; height:90%;"/>
+                        <img src="img/naves/otro3.png" style="margin:0 auto; border-radius:100px; object-fit:fill; width:80px; height:80px"/>
 
                 </div>
 

@@ -35,12 +35,12 @@ p{
 
 
 .animacionLogin{
-  
+
     animation-duration:1.5s;
     animation-name: login;
-  
+
   }
-  
+
   @keyframes login {
     from{
         width:45%;
@@ -51,7 +51,7 @@ p{
         right:130%;
         margin:auto;
     }
-  
+
     to{
         width:45%;
         height:40%;
@@ -60,19 +60,19 @@ p{
         left:0%;
         right:0%;
         margin:auto;
-        
+
     }
   }
 
 
 
   .animacionLoginVuelta{
-  
+
     animation-duration:1.5s;
     animation-name: loginBack;
-  
+
   }
-  
+
   @keyframes loginBack {
     from{
 
@@ -85,7 +85,7 @@ p{
         margin:auto;
 
     }
-  
+
     to{
         width:45%;
         height:40%;
@@ -94,23 +94,23 @@ p{
         left:-60%;
         right:160%;
         margin:auto;
-        
+
     }
 
 
 
 
   }
-  
+
 
 
   .animacionRegister{
-  
+
     animation-duration:1.5s;
     animation-name: register;
-  
+
   }
-  
+
   @keyframes register {
     from{
         width:45%;
@@ -121,7 +121,7 @@ p{
         left:130%;
         margin:auto;
     }
-  
+
     to{
         width:45%;
         height:65%;
@@ -130,19 +130,19 @@ p{
         right:0%;
         left:0%;
         margin:auto;
-        
+
     }
   }
 
 
 
   .animacionRegisterVuelta{
-  
+
     animation-duration:1.5s;
     animation-name: registerBack;
-  
+
   }
-  
+
   @keyframes registerBack {
     from{
 
@@ -155,7 +155,7 @@ p{
         margin:auto;
 
     }
-  
+
     to{
         width:45%;
         height:65%;
@@ -164,7 +164,7 @@ p{
         right:-30%;
         left:130%;
         margin:auto;
-        
+
     }
   }
 
@@ -172,74 +172,74 @@ p{
 
 
   .animacionCentro{
-  
+
     animation-duration:1.5s;
     animation-name: desaparecer;
-  
+
   }
-  
+
   @keyframes desaparecer {
     from{
-        padding:0; 
-        margin:0; 
-        width:50%; 
-        height:50%; 
-        position:absolute; 
-        top:0%; 
-        left:0%; 
-        right:0%; 
-        bottom:0%; 
+        padding:0;
+        margin:0;
+        width:50%;
+        height:50%;
+        position:absolute;
+        top:0%;
+        left:0%;
+        right:0%;
+        bottom:0%;
         margin:auto;
     }
-  
+
     to{
-        padding:0; 
-        margin:0; 
-        width:50%; 
-        height:50%; 
-        position:absolute; 
+        padding:0;
+        margin:0;
+        width:50%;
+        height:50%;
+        position:absolute;
         top:130%;
-        left:0%; 
-        right:0%; 
-        bottom:-30%; 
+        left:0%;
+        right:0%;
+        bottom:-30%;
         margin:auto;
-        
+
     }
   }
 
 
 
   .animacionCentroImg{
-  
+
     animation-duration:1.5s;
     animation-name: desaparecer;
-  
+
   }
-  
+
   @keyframes desaparecer {
     from{
-        width:35%; 
-        height:100%; 
-        position:absolute; 
-        top:0%; 
-        left:0%; 
-        right:0%; 
-        bottom:0%; 
-        margin:auto; 
-        opacity:0.7;
-    }
-  
-    to{
-        width:35%; 
-        height:100%; 
-        position:absolute; 
-        top:130%;
-        left:0%; 
-        right:0%; 
-        bottom:-30%; 
+        width:550px;
+        height:1100px;
+        position:absolute;
+        top:0%;
+        left:0%;
+        right:0%;
+        bottom:0%;
         margin:auto;
         opacity:0.7;
-        
+    }
+
+    to{
+        width:35%;
+        height:100%;
+        position:absolute;
+        top:130%;
+        left:0%;
+        right:0%;
+        bottom:-30%;
+        margin:auto;
+        opacity:0.7;
+
     }
   }
 
