@@ -38,20 +38,20 @@
 
 
             <button class="dropdown-toggle" style="color:white; padding-left:20px; padding-top:20px; outline:none" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span style="font-weight:bold">{{ auth()->user()->nombre }} 
+                <span style="font-weight:bold">{{ auth()->user()->nombre }}
                     @if(auth()->user()->perfil==1)
                         <span style="color:#CB2940">[ ADMINISTRADOR ]</span>
                     @else
-                        <span style="color:gray">[USER]</span>
+                        <span style="color:gray">[ USER ]</span>
                     @endif
 
                 </span>
             </button>
 
-            
+
 
             <div class="dropdown-menu" style="background-color:#28242D; padding-top:0; padding-bottom:0;" aria-labelledby="dropdownMenu2">
-                <a href="{{route('usuarios.usuarios')}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
+                <a href="{{route('usuarios.edit', auth()->user()->id)}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
                 <a href="{{route('usuarios.usuarios')}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Usuarios</a>
                 <a href="{{route('usuarios.logout')}}" class="btn dropdown-item" style="border-top:1px solid white;color:white; padding-top:10px; padding-bottom:10px">Cerrar Sesion</a>
             </div>
@@ -65,7 +65,7 @@
         </ul>
 
     </header>
-    
+
         <!--<input type="text" ng-model = "nombre">
         @{{"Hola " + nombre}}-->
 
@@ -80,9 +80,9 @@
             <div style="position:relative;margin-bottom:100px">
 
 
-                <div id = "portada">
+                <div id = "portada" style="background-image: url('{{asset('img/naves/starwars2.jpg')}}');">
 
-                
+
 
 
                     <!--ESTO MEJOR PARA EL LOGO DE LA OTRA PAGINA:-->
@@ -120,7 +120,7 @@
                     <div></div>
                     <div>
                         <div>
-                            <video src="storage/img/naves/pasos2.mp4" autoplay muted loop></video>
+                            <video src="img/naves/pasos2.mp4" autoplay muted loop></video>
                             <h2 style="color:white; margin-top:30px;">INSERTE Y BORRE <br>PILOTOS PARA CADA NAVE</h2>
                         </div>
                     </div>
@@ -158,8 +158,8 @@
 
                         <div class="contenedor2" class="col-md-6">
 
-                                    <img class="primero" src="{{asset('storage/img/naves/default.png')}}">
-                                    <img src="{{asset('storage/img/naves/default.png')}}"">
+                                    <img class="primero" src="{{asset('img/naves/default.png')}}">
+                                    <img src="{{asset('img/naves/default.png')}}"">
 
                             <div id="shadowTarjeta">
                                 <div id="tarjeta">
@@ -235,7 +235,7 @@
                                 </div>
 
 
-                                
+
 
                             </div>
 
@@ -276,8 +276,8 @@
 
                     <div class="contenedor2" class="col-md-6">
 
-                                <img class="primero" src="{{asset('storage/img/naves/default.png')}}">
-                                <img src="{{asset('storage/img/naves/default.png')}}">
+                                <img class="primero" src="{{asset('img/naves/default.png')}}">
+                                <img src="{{asset('img/naves/default.png')}}">
 
                         <div id="shadowTarjeta">
                             <div id="tarjeta">
@@ -353,7 +353,7 @@
                             </div>
 
 
-                            
+
 
                         </div>
 
@@ -370,7 +370,7 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
-                        
+
 
                         </div>
                         @endif
@@ -380,7 +380,7 @@
 
 
 
-            
+
 
 
 
@@ -401,7 +401,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous">        
+        crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
@@ -413,15 +413,15 @@
     <script>
 
         $(function(){
-			new WOW().init(); 
+			new WOW().init();
 		});
 
 
         $(".carousel").carousel({
         interval: false,
         });
-        
-    
+
+
     </script>
 
 </body>

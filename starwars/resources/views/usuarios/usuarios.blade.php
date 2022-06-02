@@ -28,7 +28,7 @@
                     @if(auth()->user()->perfil==1)
                         <span style="color:#CB2940">[ ADMINISTRADOR ]</span>
                     @else
-                        <span style="color:gray">[USER]</span>
+                        <span style="color:gray">[ USER ]</span>
                     @endif
 
                 </span>
@@ -37,7 +37,7 @@
             
 
             <div class="dropdown-menu" style="background-color:#28242D; padding-top:0; padding-bottom:0;" aria-labelledby="dropdownMenu2">
-                <a href="{{route('usuarios.usuarios')}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
+                <a href="{{route('usuarios.edit', auth()->user()->id)}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Perfil</a>
                 <a href="{{route('usuarios.usuarios')}}" class="btn dropdown-item" style="color:white; padding-top:10px; padding-bottom:10px">Usuarios</a>
                 <a href="{{route('usuarios.logout')}}" class="btn dropdown-item" style="border-top:1px solid white;color:white; padding-top:10px; padding-bottom:10px">Cerrar Sesion</a>
             </div>
@@ -54,12 +54,12 @@
 
 
 
-    <img src="storage/img/naves/otro3.png" style="width:180px; height:200px; display:block; margin:auto; margin-top:20px;"/>
+    <img src="{{asset('img/naves/otro3.png')}}" style="width:180px; height:200px; display:block; margin:auto; margin-top:20px;"/>
 
     <div class="row" style="background-color:white; width:60%; height:30%; border-radius:30px; margin:0 auto; margin-top:70px;">
 
         <div class="col-md-4" style="margin:10px; margin-top:15px; margin-left:15%;">
-            <h5 class="text-center">Servicio</h5>
+            <h5 class="text-center">Usuarios</h5>
             <select id="idfiltro-nombre" name="filtro-nombre" class="form-control" style="margin:auto; border-radius: 30px; width:100%;">
                 <option value="">Todos</option>
                     @foreach($usuarios as $usu)
@@ -70,7 +70,7 @@
 
 
         <div class="col-md-4" style="margin:10px; margin-top:15px;">
-            <h5 class="text-center">Servicio Evalua</h5>
+            <h5 class="text-center">Tipos Usuarios</h5>
             <select id="idfiltro-perfil" name="filtro-perfil" class="form-control" style="margin:auto; border-radius: 30px; width:100%;">
                 <option value="">Todos</option>
                     @foreach($usuarios as $usu)
@@ -93,7 +93,6 @@
 
 
     <div id="tablacontenedor" class="table-responsive" style="overflow:auto; height:600px;background-color: #fafafa; width:80%; margin:auto; margin-top:50px; margin-bottom:80px; border-radius:15px;" class="shadow-lg">
-            <form name="frm-usuarios" id="frm-usuarios" method="post">
                 <table id="edit-usuarios" class="display">
                     <thead style="background-color:#172640; padding:0;height:40px; width:100%;">
                         <tr style="height:70px;color:white; font-size:17px;">
@@ -107,31 +106,32 @@
 
                     <tbody>
 
-                    @foreach($usuarios as $usu) {
+                    @foreach($usuarios as $usuario) {
 
                             <tr>
 
-                            <td>{{ $usu->nombre }}</td>
-                            <td>{{ $usu->correo }}</td>
-                            <td style="background-color:#85144B;color:white;">{{ $usu->perfil }}</td>
-                            @if($usu->imagen==null)
+                            <td>{{ $usuario->nombre }}</td>
+                            <td>{{ $usuario->correo }}</td>
+                            <td style="background-color:#85144B;color:white;">{{ $usuario->perfil }}</td>
+                            @if($usuario->imagen==null)
                                 <td>NO EXISTE</td>
                             @else
-                                <td>{{ $usu->imagen }}</td>
+                                <td>{{ $usuario->imagen }}</td>
                             @endif
 
 
                             <td>
 
                                 @if(auth()->user()->perfil == 1)
-                                           
-                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#borrar-confirm" ><i class="fas fa-trash"></i></button>
-                                    <a class="btn btn-success btn-xs"><i class="fas fa-pencil-alt"></i></a>
+                                    @if(auth()->user()->correo != $usuario->correo)
+                                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#borrar-confirm" ><i class="fas fa-trash"></i></button>
+                                    @endif
+                                    <a href="{{route('usuarios.edit', $usuario->id)}}" class="btn btn-success btn-xs"><i class="fas fa-pencil-alt"></i></a>
 
                                 @else
 
-                                    <button type="button" class="btn btn-danger btn-xs disabled" disabled data-toggle="modal" data-target="#borrar-confirm" ><i class="fas fa-trash"></i></button>
-                                    <a class="btn btn-success btn-xs disabled" disabled><i class="fas fa-pencil-alt"></i></a>
+                                    <button type="button" class="btn btn-danger btn-xs disabled" disabled data-toggle="modal" data-href="{{route('usuarios.destroy', $usu)}}" data-target="#borrar-confirm" ><i class="fas fa-trash"></i></button>
+                                    <a href="{{route('usuarios.edit', $usuario->id)}}" class="btn btn-success btn-xs disabled" disabled><i class="fas fa-pencil-alt"></i></a>
 
                                 @endif
                             </td>
@@ -148,8 +148,33 @@
                         </tr>
                     </tfoot>
                 </table>
-            </form>
 
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="modal fade" id="borrar-confirm">
+            <form action="{{ route('usuarios.destroy', $usu)}}" method="post">
+                @csrf
+                @method('DELETE')
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                     <div class="modal-body">
+                        <h4>Borrar Usuario</h4>
+                        <p>Confirme que quiere borrar a este usuario</p>
+                    </div>
+                  <div class="modal-footer justify-content-between">
+                     <button type = "submit" class="btn btn-danger btn-ok">Borrar</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                  </div>
+               </div>
+            </form>
         </div>
 
 

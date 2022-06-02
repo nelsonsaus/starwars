@@ -72,3 +72,11 @@ Route::get('logout', 'App\Http\Controllers\UsuarioController@logout')
 
 Route::get('usuarios', 'App\Http\Controllers\UsuarioController@index')
     ->name('usuarios.usuarios')->middleware('auth');
+
+Route::delete('usuarios/{usuario}', 'App\Http\Controllers\UsuarioController@destroy')
+    ->name('usuarios.destroy')->middleware('auth');
+
+
+
+Route::put('usuarioss/{usuario}', 'App\Http\Controllers\UsuarioController@update')
+    ->name('usuarios.update')->middleware('auth');

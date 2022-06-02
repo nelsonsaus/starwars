@@ -11,12 +11,8 @@ use Illuminate\Support\Facades\Hash;
 class UsuarioController extends Controller
 {
 
-    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+ 
     public function index()
     {
 
@@ -24,30 +20,21 @@ class UsuarioController extends Controller
         return view('usuarios.usuarios', compact('usuarios'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function store(Request $request)
     {
 
 
 
-        
+
         $request->validate([
             'nombre' => ['required'],
             'correo' => ['required', 'unique:users,correo'],
@@ -70,49 +57,81 @@ class UsuarioController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Usuario $usuario)
+
+    public function show(User $usuario)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Usuario $usuario)
+    public function edit(User $usuario)
     {
-        //
+        return view('usuarios.edit', compact('usuario'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, User $usuario)
     {
-        //
+
+
+
+            
+
+
+        //El email pues obviamente tendra que ser unico.
+
+        //si todo esta bien pues actualizamos los campos:
+
+        $usuario->update([
+            'nombre' => ucwords($request->nombre),
+            'correo' => $request->correo,
+            'perfil' => $request->perfil
+        ]);
+
+
+
+        //Ahora si ha puesto foto validamos la foto y la metemos
+
+        if($request->has('foto')){
+
+            $request->validate(['foto'=>['image']]);
+
+            $fileImagen=$request->file('foto');
+            $nombre="img/naves/".uniqid()."_".$fileImagen->getClientOriginalName();
+
+            if($usuario->imagen!=null){
+                unlink($usuario->imagen);
+            }
+
+            Storage::Disk("public")->put($nombre, \File::get($fileImagen));
+            $usuario->update(['imagen'=>"storage".$nombre]);
+        }
+
+
+        if($request->has('telefono')){
+            $usuario->update(['telefono'=>$request->telefono]);
+        }
+
+
+
+
+        $usuario->save();
+        return redirect()->route('usuarios.usuarios')->with('mensaje', "Usuario Actualizado");
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Usuario $usuario)
+    public function destroy(User $usuario)
     {
-        //
+
+
+        if($usuario->imagen!=null){
+            unlink($usuario->imagen);
+        }
+
+
+        
+
+        $usuario->delete();
+        return redirect()->route('usuarios.usuarios')->with('mensaje', "El usuario se ha borrado correctamente.");
     }
 
 
@@ -137,12 +156,14 @@ class UsuarioController extends Controller
             // die();
             if(Auth::attempt($credenciales)){
                 return view('inicio');
-                
+
             }
             // return view('inicio');
+
             return redirect()->route('login')->with('error', 'ERROR: El usuario no existe...');
         }else{
 
+            return redirect()->route('login')->with('error', 'ERROR: El usuario no existe...');
 
         }
 
@@ -157,4 +178,7 @@ class UsuarioController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login');
     }
+
+    
+
 }

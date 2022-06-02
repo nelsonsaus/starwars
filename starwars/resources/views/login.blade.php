@@ -30,8 +30,8 @@
 
 
 
-        <img src="storage/img/naves/unafoto.png" style="width:550px; height:1100px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; opacity:0.7">
-    
+        <img src="{{asset('img/naves/unafoto.png')}}" style="width:550px; height:1100px; position:absolute; top:0%; left:0%; right:0%; bottom:0%; margin:auto; opacity:0.7">
+
 
 
 
@@ -52,7 +52,7 @@
                 <p style="font-weight:bold; margin-top:18%; font-size:60px;">STAR WARS</p>
                 <p style="font-style:italic; font-size:20px; opacity:0.7;">Aplicacion sobre Star Wars Naves y Pilotos</p>
 
-            
+
                 <button id="btnLogin" onclick="loguear()" type="button" style="width:200px; border:2px solid white; text-decoration:none; color:white; font-size:20px; padding:10px; display:block; margin:auto; margin-top:70px; text-align:center;">INICIAR SESION</button>
                 <button id="btnRegister" onclick="registrar()" type="button" style="width:160px; border:2px solid white; text-decoration:none; color:white; font-size:20px; padding:10px; display:block; margin:auto; margin-top:20px; text-align:center; background-color:#CB2940">Registrarte</button>
 
@@ -141,14 +141,14 @@
 
                 <div id="divImagen" class="rounded-circle" style="background-color:white; padding:0; position:absolute; top:0%; left:0%; right:0%; margin:auto; width:17%; height:17%;">
 
-                        <img src="storage/img/naves/otro3.png" style="margin:0 auto; border-radius:100px; object-fit:fill; width:90%; height:90%;"/>
+                        <img src="img/naves/otro3.png" style="margin:0 auto; border-radius:100px; object-fit:fill; width:90%; height:90%;"/>
 
                 </div>
 
 
 
             </div>
-            
+
         </form>
 
 
@@ -205,12 +205,12 @@
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
         crossorigin="anonymous">
     </script>
-    
+
 
     <script>
     $('#borrar-confirm').on('show.bs.modal', function (event) {
            $(this).find('.btn-ok').attr('href', $(event.relatedTarget).data('href'));
-         })  
+         })
 </script>
 
 
@@ -261,7 +261,7 @@
 
     function registrar(){
 
-        
+
         centro.classList.add("animacionCentro");
         setTimeout(() => {
             img[0].classList.add("animacionCentroImg");
