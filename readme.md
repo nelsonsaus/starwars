@@ -11,7 +11,15 @@ AUN NO ESTA TERMINADO !!!!
 ___
 
 
-* Recuerda que github elimina la carpeta vendor(usando el comando composer install) y el .env por lo cual deberás crearlos, una vez hecho eso pon el comando de la api  php artisan nave:insertar
+* Recuerda que github elimina la carpeta vendor(usando el comando composer install) y el .env por lo cual deberás crearlos aqui los pasos:
+
+![Imagen chrome://flags](images/uno.png)
+![Imagen chrome://flags](images/dos.png)
+![Imagen chrome://flags](images/tres.png)
+![Imagen chrome://flags](images/cuatro.png)
+![Imagen chrome://flags](images/cinco.png)
+
+
 
 * El comando para insertar naves es php artisan nave:insertar. INSERTALO ANTES DE IR A LA PAGINA DE LAS NAVES.
 
